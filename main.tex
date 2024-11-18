@@ -1,0 +1,345 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{url}
+
+\title{Lab 3: React Native To-Do List Application}
+\author{Mouli Naidu Lukalapu \\
+Instructor: Flavio Esposito \\
+Course: Web Technologies\\
+GitHub: https://github.com/mouli86/web-tech-lab3}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Task 1: Set Up the Dev Environment}
+
+In this task, you will set up your development environment to build React Native applications.
+
+\subsection*{1.4 Step 1: Install Node.js and Watchman}
+
+\begin{enumerate}
+    \item \textbf{Install Node.js:}
+        \begin{itemize}
+           
+                \centering
+                \includegraphics[width=.8\linewidth]{nodeinstallation.png}\\
+                
+          
+        \end{itemize}
+    \item \textbf{Install Watchman (Optional for macOS/Linux):}
+        \begin{itemize}
+            \centering
+            \includegraphics[width=0.80\linewidth]{watchman.png}\\
+                \end{itemize}
+                \enditem
+
+\subsection*{1.5 Step 2: Install React Native CLI}
+
+The React Native CLI (Command Line Interface) allows you to create new React Native projects and run them easily.
+
+\begin{itemize}
+    \item Open your terminal and run:
+        \begin{verbatim}
+        npm install -g react-native-cli
+
+        \end{verbatim}
+         \centering
+                \includegraphics[width=.8\linewidth]{reactcliinstall.png}\\
+                
+    \item Note: If the global `react-native-cli` package has been deprecated, you can use the local version with `npx`:
+        \begin{verbatim}
+        npx react-native init YourProjectName
+        \end{verbatim}
+        \centering
+                \includegraphics[width=.99\linewidth]{reactnativeinit.png}\\
+\end{itemize}
+
+\subsection*{1.6 Step 3: Set Up Android Studio (or Xcode for iOS)}
+
+\subsubsection*{For Android Users:}
+
+\begin{enumerate}
+
+    \item Enable Recommended SDK Tools under the SDK Tools tab:
+        \begin{itemize}
+            \item Android SDK Build-Tools (install the latest version)
+            \item Android SDK Platform-Tools
+            \item Android Emulator
+            \item Google Play Services (if your app needs Google services)
+            
+               \centering
+                \includegraphics[width=.99\linewidth]{androidstudio.png}\\
+        \end{itemize}
+\end{enumerate}
+
+\subsubsection*{For iOS Users:}
+
+\begin{itemize}
+    \item Ensure Xcode is installed from the App Store.
+    \item Install Xcode Command Line Tools:
+        \begin{verbatim}
+        xcode-select --install
+        \end{verbatim}
+
+         \centering
+                \includegraphics[width=.80\linewidth]{xcodecli.png}\\
+        \end{itemize}
+        \end{enumerate}
+
+        \subsection*{1.7 Step 4: Create a New React Native Project}
+
+        \begin{enumerate}
+            \item Open your terminal and run:
+                \begin{verbatim}
+                npx react-native init YourProjectName
+                cd YourProjectName
+                \end{verbatim}
+               
+                        \includegraphics[width=1\linewidth]{newreactnativeproject.png}\\
+                        \caption{Figure 1: Creating a new React Native project}
+            
+        \end{enumerate}
+
+        \subsection*{1.8 Step 5: Open the Project in Visual Studio Code}
+
+        \begin{enumerate}
+          
+            \item Install the React Native Tools extension in VS Code for a better development experience.
+             \centering
+                        \includegraphics[width=.80\linewidth]{vscodeextension.png}\\
+                        \caption{Figure 2: Installing React Native Tools extension}
+            \item Open App.js and modify the content to display "My First React Native Application".
+            \centering
+                        \includegraphics[width=.7\linewidth]{codechange.png}\\
+                        \caption{Figure 3: Modifying App.js}
+        \end{enumerate}
+
+        \subsection*{1.9 Step 6: Start the Metro Bundler}
+
+        The Metro Bundler is a JavaScript bundler specifically for React Native. It watches your files and serves the appropriate JavaScript code.
+
+        \begin{itemize}
+            \item In your terminal, run:
+                \begin{verbatim}
+                npx react-native start
+                \end{verbatim}
+                 \centering
+                        \includegraphics[width=.7\linewidth]{reactnativestart.png}\\
+                        \caption{Figure 4: Starting the Metro Bundler}
+           
+        \end{itemize}
+
+        \subsection*{1.10 Step 7: Run Your App on an Emulator or Device}
+
+        \subsubsection*{For Android:}
+
+        \begin{enumerate}
+            \item Ensure an emulator is running (you can create one in Android Studio's AVD Manager) or connect a physical device with USB debugging enabled.
+            \item Run:
+                \begin{verbatim}
+                npx react-native run-android
+                \end{verbatim}
+                
+            \item This compiles your app and installs it on the connected Android device or emulator.
+             \centering
+                        \includegraphics[width=.5\linewidth]{reactfirstrun.png}\\
+                        \caption{Figure 5: Running the app on an Android device}
+        \end{enumerate}
+
+        \subsection*{1.11 Step 8: Run Your App on a Mobile Device Using Expo}
+
+
+        \begin{enumerate}
+            \item Install and create a new Expo project:
+                \begin{verbatim}
+                npm install -g expo-cli
+                npx expo init YourProjectName
+                cd YourProjectName
+                npx expo start
+                \end{verbatim}
+                 \item Connect Your Device:
+                \begin{itemize}
+                    \item Ensure your mobile device is connected to the same Wi-Fi network as your development machine.
+                \end{itemize}
+            \item Open the Expo Go App:
+                \begin{itemize}
+                    \item Install the Expo Go app from the App Store (iOS) or Google Play Store (Android).
+                \end{itemize}
+            \item Scan the QR Code:
+                \begin{itemize}
+                    \item In the Expo developer tools opened in your browser, you will see a QR code.
+                    \item Use the Expo Go app to scan the QR code.
+                \end{itemize}
+            \item Run the App:
+                \begin{itemize}
+                    \item Once the QR code is scanned, your React Native app will start running on your mobile device.
+                \end{itemize}
+                
+                   \centering
+                        \includegraphics[width=.9\linewidth]{npm install -g expo-cli.png}\\
+                        \caption{Figure 6: Installing Expo CLI}
+                    \centering
+                        \includegraphics[width=.9\linewidth]{expoinit.png}\\
+                        \caption{Figure 7: Creating a new Expo project}
+                    \centering
+                        \includegraphics[width=.9\linewidth]{expostart.png}\\
+                        \caption{Figure 8: Starting the Expo development server}
+                        
+                    \centering
+                        \includegraphics[width=.6\linewidth]{physicaldevice.png}\\
+                        \caption{Figure 9: Running a physical device}
+                        \label{Physical Device}
+                        
+         
+        \end{enumerate}
+
+        \newpage
+
+        \section*{ Task 1 }
+
+        Provide detailed answers to the following questions, including any necessary screenshots:
+
+        \begin{enumerate}
+            \item \textbf{Screenshots of Your App }
+                \begin{itemize}
+                    \item Attach screenshots of your app running on an emulator and on a physical Android or iOS device.
+                    \\
+                    Figure 5 and 9 shows the screenshots of application running on emulator and physical device.
+                    
+                    \item Describe any differences you observed between running the app on an emulator versus a physical device.\\
+                    \textbf{A: }I observed some differences when running todo app between on an emulator(Expo) and on physical device. While the emulator provided a convenient environment for testing and debugging, I noticed some lag, while loading the app and while showing animations, as it simulates hardware. On the other hand, the physical device offered smoother performance and more responsiveness over emulator Although these differences weren't significant in my small app, I think these would have impact on performance on large applications requiring intensive hardware utilization 
+                    
+                    
+                \end{itemize}
+            \item \textbf{Setting Up an Emulator }
+                \begin{itemize}
+                    \item Explain the steps you followed to set up an emulator in Android Studio or Xcode.\\
+                    \textbf{A:}I have opened Android Studio Preferences Then, I navigated to Appearance and Behavior - System Settings - Android SDK. In the SDK tab, I made sure to install the correct SDK version, along with the necessary packages like SDK tools, platform tools, and build tools.\\
+                    
+Next, I created a Virtual Device (AVD) by going to Tools - AVD Manager, and clicked Create Virtual Device. I selected a device model (MEDIUMPHONEAP) and clicked Next. After that, I chose a system image that matched my preferred Android version, then clicked Next and clicked Finish to create the AVD.\\
+Once the AVD was created, I could see it listed in the AVD Manager. I clicked the Play button next to my virtual device to launch the emulator.\\
+                    
+                    
+                    \item Discuss any challenges you faced during the setup and how you overcame them.\\
+                    I faced an issue with the SDK not having the proper permissions while setting up the Android emulator. To fix it, I ensured that the SDK directories had the correct permissions. I ran the command sudo chmod -R 777 ~/to/android-sdk/ in the terminal to grant required permissions
+                \end{itemize}
+            \item \textbf{Running the App on a Physical Device Using Expo }
+                \begin{itemize}
+                    \item Describe how you connected your physical device to run the app using Expo.\\
+                    \textbf{A:}
+ I have installed the Expo Go app on my physical device and then initialized the React Native app with Expo CLI using the command `npx expo init simpleToDoApp`. To run application I connected the physical device via USB and scanned the QR code generated by the Expo CLI. 
+                    \item Include any troubleshooting steps if you encountered issues.\\
+                    I had to run the command with sudo to ensure the necessary permissions were granted for the process to complete successfully.
+                \end{itemize}
+            \item \textbf{Comparison of Emulator vs. Physical Device }
+                \begin{itemize}
+                    \item Compare and contrast using an emulator versus a physical device for React Native development and  Discuss the advantages and disadvantages of each option.\\
+                    \textbf{A:}Using an emulator for React Native development offers convenience, as it allows quick testing without needing a physical device. It's easy to set up and supports debugging tools, but performance can be slower due to the extra layer of simulation, and some device-specific features like sensors may not work accurately. On the other hand, a physical device provides a more realistic testing environment, with smoother performance and better handling of hardware features like GPS or the camera. However, it requires more setup, such as connecting the device via USB or configuring wireless debugging. Both options have their pros and cons depending on the app’s complexity and the need for precise testing.
+
+                    
+                \end{itemize}
+            \item \textbf{Troubleshooting a Common Error }
+                \begin{itemize}
+                    \item Identify a common error you encountered when starting your React Native app. Note that it is very unlikely that everyone will get the same error here.
+                    \item Explain the cause of the error and the steps you took to resolve it.
+                    \\
+                    When starting my React Native app, I encountered an error related to outdated devDependencies, specifically the React Native CLI version. Updating the CLI version in package.json resolved the issue, and the app started without errors after npm install.
+                \end{itemize}
+        \end{enumerate}
+
+        \section*{Task 2: Building a Simple To-Do List App }
+        \subsection*{2.2 Step 1: Set Up the Project}
+
+        \begin{enumerate}
+            \item Create and navigate to the new project:
+                \begin{verbatim}
+                npx react-native init SimpleTodoApp
+                cd SimpleTodoApp
+                \end{verbatim}
+                 \centering
+                        \includegraphics[width=.9\linewidth]{t2init.png}\\
+                        \caption{Figure 10: Setting up the project}
+
+        \end{enumerate}
+
+        \subsection*{2.6 Step 4: Running the App}
+
+        \begin{enumerate}
+            \item In your terminal, run:
+                \begin{verbatim}
+                npx react-native run-android
+                \end{verbatim}
+
+             \centering
+                        \includegraphics[width=.9\linewidth]{t2run.png}\\
+                        \caption{Figure 11: Running the app}
+        \end{enumerate}
+
+        \section*{2.7 Task 2 Submission}
+
+        Provide detailed answers to the following questions, including any necessary screenshots:
+
+        \begin{enumerate}
+            \item \textbf{Mark Tasks as Complete }
+                \begin{itemize}
+                    \item Add a toggle function that allows users to mark tasks as completed.
+                    \item Style completed tasks differently, such as displaying strikethrough text or changing the text color.
+                    \begin{center}
+                    \includegraphics[width=.5\linewidth]{toggle.png}\\
+                    \end{center}
+                    
+                    \item Explain how you updated the state to reflect the completion status of tasks.\\
+                    \\
+                    \textbf{A:} For updating state, the toggleTask function is responsible for marking tasks as complete or incomplete. For this toggleTask iterates through the tasks array and checks if the item.id matches the task ID passed to the function. If they match, a new object is created with the spread operator (...item) to ensure immutability. The completed property of the new object is toggled (!item.completed) based on the current state. The entire tasks array is then updated using setTasks with the mapped array containing the modified task object.\\ 
+        To show difference between checked and unchecked tasks, task text is styled conditionally using the taskTextCompleted style when completed is true, indicating the task's status.
+                \end{itemize}
+            \item \textbf{Persist Data Using AsyncStorage }
+                \begin{itemize}
+                    \item Implement data persistence so that tasks are saved even after the app is closed.
+                    \item Use AsyncStorage to store and retrieve the tasks list.
+                     \begin{center}
+                    \includegraphics[width=.9\linewidth]{async.png}\\
+                    \end{center}
+
+                   AsyncStorage ensures that the task list is saved and retrieved even after the app is closed. The saveTasks function takes the current tasks state as input, converts it into a JSON string using JSON.stringify, and stores it in the device's storage using AsyncStorage.setItem("tasks", JSON.stringify(tasks)). This process ensures the data is in a format suitable for persistent storage. \\
+        \\
+        On the other hand , the loadTasks function retrieves the stored tasks from AsyncStorage using AsyncStorage.getItem("tasks"). If the tasks are successfully fetched, the function parses the JSON string back into a JavaScript object using JSON.parse and updates the tasks state via setTasks. \\
+                    
+                \end{itemize}
+            \item \textbf{Edit Tasks}
+                \begin{itemize}
+                    \item Allow users to tap on a task to edit its content.
+                    \item Implement an update function that modifies the task in the state array.
+                     \begin{center}
+                    \includegraphics[width=.5\linewidth]{edittasks.png}\\
+                      \includegraphics[width=.5\linewidth]{deletetasks.png}\\
+                    \end{center}
+                    \item Explain how you managed the UI for editing tasks.\\
+                    \\
+                    \textbf{A:} When user selects edit icon, the modal is conditionally rendered based on the value of isEditModalVisible and includes an input field pre-populated with the task's current text. When user selects Save button it triggers  saveEdit method for saving the changes and when close is selected closeEditModal to close the prompt without making any changes.\\
+                    \\
+        The saveEdit function checks if editingTask and newName are valid and the it iterates through tasks with the matching ID and updates the task with the new name using the map method. The spread operator creates a copy of the task to prevent direct mutation, and the text property is updated with the new name. The modified array is set back into the tasks state and  openEditModal function takes a task as an argument, sets the editingTask state, and sets isEditModalVisible to true to display the edit modal. 
+                \end{itemize}
+            \item \textbf{Add Animations}
+                \begin{itemize}
+                    \item Use the Animated API from React Native to add visual effects when adding or deleting tasks.
+                      \begin{center}
+                      \includegraphics[width=.99\linewidth]{animations.png}\\
+                    \end{center}
+                   \item Describe the animations you implemented and how they enhance user experience.\\
+                   \\
+        \textbf{A:} I have implemented an opacity fade-out animation using the Animated component from React Native. Each task object in the tasks async array has an opacity property initialized with a new Animated.Value(1), representing the starting opacity (fully visible). When the delete operation is called, the deleteTask function uses Animated.timing to animate the opacity of the task to be deleted from 1 (fully visible) to 0 (invisible) over a duration of 500 milliseconds. The animation is started using .start(), and inside the callback, the task is filtered out of the tasks state using setTasks.
+
+                \end{itemize}
+        \end{enumerate}
+
+
+        \section*{Use of Generative AI Tools}
+        I used ChatGPT to assist me in fixing styling issues and troubleshooting problems related to running my React Native app on a physical device. It helped me resolve issues with SDK permissions and provided guidance on setting up and running the app successfully.
+\end{document}
